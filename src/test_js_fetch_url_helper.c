@@ -20,6 +20,9 @@ int main(int argc, char *argv[]) {
 	duk_push_c_function(ctx, JS_Helper_Fetch_Url, 1/*nargs*/);
 	duk_put_prop_string(ctx, -2, "_js_helper_fetch_url");
 
+	duk_push_c_function(ctx, JS_Helper_Fetch_Url_More, 1/*nargs*/);
+	duk_put_prop_string(ctx, -2, "_js_helper_fetch_url_more");
+
 	// https://github.com/svaarala/duktape/blob/master/doc/release-notes-v2-0.rst
 	if (duk_peval_file(ctx, argv[1]) != 0) {
 		printf("#FAIL, duk_peval_file() error: %s!\n", duk_safe_to_string(ctx, -1));
