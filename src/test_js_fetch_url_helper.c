@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include "duktape.h"
+
+#if DUK_VERSION >= 20000L
 #include "duk_v1_compat.h"
+#endif 
+
 #include "my_js_helper_print.h"
 #include "my_js_helper_fetch_url.h"
 
